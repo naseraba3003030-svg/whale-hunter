@@ -1,55 +1,117 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Whale Hunter</title>
+
 <style>
 body{
+    margin:0;
     background:#0d1117;
     color:white;
     font-family:Arial,sans-serif;
-    text-align:center;
+}
+header{
+    background:#161b22;
     padding:20px;
+    text-align:center;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+    padding:16px;
 }
 .card{
     background:#161b22;
-    margin:15px auto;
-    padding:20px;
-    border-radius:15px;
-    max-width:350px;
-    box-shadow:0 0 10px rgba(0,255,255,.2);
+    border-radius:12px;
+    padding:16px;
 }
 .value{
     font-size:28px;
-    color:#00ff88;
-    margin-top:10px;
+    color:#36d399;
+    font-weight:bold;
+}
+small{
+    color:#9ca3af;
+}
+button{
+    padding:10px 16px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
 }
 </style>
+
 </head>
+
 <body>
 
+<header>
 <h1>🐋 Whale Hunter</h1>
+<p>Prototype Dashboard</p>
+
+<button onclick="refreshData()">
+Refresh
+</button>
+
+</header>
+
+<div class="grid">
 
 <div class="card">
-<h2>AI Score</h2>
-<div class="value">0/100</div>
+<h3>AI Score</h3>
+<div class="value" id="score">
+--
+</div>
 </div>
 
 <div class="card">
-<h2>Dormant Wallets</h2>
-<div class="value">0</div>
+<h3>Dormant Wallets</h3>
+<div class="value" id="dormant">
+--
+</div>
 </div>
 
 <div class="card">
-<h2>Rich List</h2>
-<div class="value">Loading...</div>
+<h3>Rich List</h3>
+<div class="value" id="rich">
+--
+</div>
 </div>
 
 <div class="card">
-<h2>Status</h2>
-<div class="value">Ready</div>
+<h3>Status</h3>
+<div class="value" id="status">
+Ready
 </div>
+<small>
+Prototype - connect APIs later
+</small>
+</div>
+
+</div>
+
+<script>
+
+function refreshData(){
+
+document.getElementById("score").innerHTML="87/100";
+
+document.getElementById("dormant").innerHTML="2";
+
+document.getElementById("rich").innerHTML="Loading...";
+
+document.getElementById("status").innerHTML="Updated";
+
+}
+
+refreshData();
+
+</script>
 
 </body>
 </html>
